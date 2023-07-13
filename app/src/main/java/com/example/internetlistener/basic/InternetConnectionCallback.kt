@@ -1,4 +1,4 @@
-package com.example.internetlistener
+package com.example.internetlistener.basic
 
 interface InternetConnectionCallback {
     fun onConnected()

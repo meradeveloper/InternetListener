@@ -1,4 +1,4 @@
-package com.example.internetlistener
+package com.example.internetlistener.basic
 
 import android.os.Bundle
 import android.util.Log
@@ -41,10 +41,7 @@ class MainActivity : ComponentActivity(), InternetConnectionCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        InternetConnectionObserver
-            .instance(this)
-            .setCallback(this)
-            .register()
+        InternetConnectionObserver.register()
 
         setContent {
             InternetListenerTheme {

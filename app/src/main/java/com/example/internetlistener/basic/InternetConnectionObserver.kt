@@ -1,4 +1,4 @@
-package com.example.internetlistener
+package com.example.internetlistener.basic
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -16,13 +16,13 @@ object InternetConnectionObserver{
     private val validNetworks: MutableSet<Network> = HashSet()
     private var connectionCallback: InternetConnectionCallback? = null
 
-    fun instance(context: Context): InternetConnectionObserver{
+    fun instance(context: Context): InternetConnectionObserver {
         cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return this
     }
 
-    fun setCallback(connectionCallback: InternetConnectionCallback): InternetConnectionObserver{
-        this.connectionCallback = connectionCallback
+    fun setCallback(connectionCallback: InternetConnectionCallback): InternetConnectionObserver {
+        InternetConnectionObserver.connectionCallback = connectionCallback
         return this
     }
 
@@ -70,7 +70,7 @@ object InternetConnectionObserver{
         }
     }
 
-    fun register(): InternetConnectionObserver{
+    fun register(): InternetConnectionObserver {
         networkCallback = createNetworkCallback()
         val networkRequest = NetworkRequest.Builder()
             .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)

@@ -1,4 +1,4 @@
-package com.example.internetlistener
+package com.example.internetlistener.basic
 
 import android.util.Log
 import java.io.IOException
