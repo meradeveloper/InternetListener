@@ -143,7 +143,6 @@ class KeyboardStateListenActivity : ComponentActivity() {
 
 @Composable
 private fun showKeyboardScreen() {
-    Log.e("Recompose", "before state")
     keyboardScreen()
 }
 
@@ -156,8 +155,6 @@ fun keyboardScreen(keyboardViewModel: KeyboardStateViewModel = viewModel()) {
     var inputState: String by remember {
         mutableStateOf("")
     }
-
-    Log.e("Recompose", "height = $height")
 
     Row(
         horizontalArrangement = Arrangement.Center,
